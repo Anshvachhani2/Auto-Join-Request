@@ -72,6 +72,10 @@ async def add_to_db(var, id):  # Take int or str with numbers only , Returns Boo
     except Exception as e:
         return False
 
+async def is_user_exist(self, id):
+    user = await self.col.find_one({'id':int(id)})
+    return bool(user)
+
 
 async def get_all(var):  # Returns List
     users = await db.get(var)
