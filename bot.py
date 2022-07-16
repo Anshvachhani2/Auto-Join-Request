@@ -94,8 +94,7 @@ start_buttons = [
      [Button.url(" 💜 Add Me To Your Channel 💜", "t.me/Accept_Request_Joinbot?startgroup=true") ], 
      [Button.url("💝 Join support Channel", "https://t.me/+S6z5Tuj8TTM4N2Jl")],
 ]
-                [
-     [Button.inline("💚 Help 💚", data="Helper")], 
+    [[Button.inline("💚 Help 💚", data="Helper")], 
      [Button.inline("🌀 About 🌀", data="Ansh")], 
 ]
 
@@ -136,6 +135,9 @@ async def Ansh(event):
     await event.edit(
         '💞', 
         buttons=Button.inline("Back to Home 🏠", data="start"),
+    ) 
+        
+        
 @bot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private and e.fwd_from))
 async def settings_selctor(event):  # sourcery skip: avoid-builtin-shadow
     id = event.fwd_from.from_id
