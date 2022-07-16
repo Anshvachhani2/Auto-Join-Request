@@ -15,7 +15,7 @@ logging.basicConfig(
 log = logging.getLogger("ChannelActions")
 log.info("\n\nStarting...\n")
 
-
+log_grp = -1001206327449 #Add your id
 try:
     bot_token = config("BOT_TOKEN")
     REDIS_URI = config("REDIS_URI")
@@ -106,6 +106,7 @@ async def starters(event):
     )
     if not (await is_added("BOTUSERS", event.sender_id)):
         await add_to_db("BOTUSERS", event.sender_id)
+        await bot.send_message(log_grp,f"New User started bot\n\nUserName-->{from_.username}\nNAme-->{from_.first_name}")
 
 
 @bot.on(events.CallbackQuery(data="start"))
