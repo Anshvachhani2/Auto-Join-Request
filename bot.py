@@ -92,7 +92,7 @@ start_msg = """**👾 Welcome to the bot**
 
 start_buttons = [
      [Button.url(" 💜 Add Me To Your Channel 💜", "t.me/Accept_Request_Joinbot?startgroup=true") ], 
-     [Button.url("💝 Join support Channel, "https://t.me/+A3UMHlNnyDJiOTY9")],
+     [Button.url("💝 Join support Channel, "t.me/+A3UMHlNnyDJiOTY9")],
 ]
 
 
