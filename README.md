@@ -1,6 +1,4 @@
-# ChannelActionsBot
-
-Can be found on telegram as [@ChannelActionsBot](https://t.me/ChannelActionsBot)!
+# Auto Join Request Accept Bot
 
 
 ## Features
