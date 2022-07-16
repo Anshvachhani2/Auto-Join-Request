@@ -92,7 +92,7 @@ start_msg = """**👾 Welcome to the bot**
 
 start_buttons = [
      [Button.url(" 💜 Add To Channel", "t.me/Accept_Request_Joinbot?startgroup=true") ], 
-     [Button.url("💝 Join This Channel 💝", "https://t.me/+_kGIkBLSK9ozMjE9")],
+     [Button.url("💝 Join This Channel 💝", "https://t.me/+S6z5Tuj8TTM4N2Jl")],
 ]
 
 
@@ -234,9 +234,9 @@ async def approver(event):
     welcome_msg = eval(await db.get("WELCOME_MSG") or "{}")
     chat_welcome = (
         welcome_msg.get(chat)
-        or "<b>How To Use This Bot Check Channel 🔻</b>"
+        or "**How To Use This Bot Check Channel**"
     )
-    chat_welcome += "\nSend /start to know more."  # \n\n__**Powered by 💝 Join Request Accept 💝**__"
+    chat_welcome += "\n**🔻**"  # \n\n__**Powered by 💝 Join Request Accept 💝**__"
     who = await bot.get_entity(event.user_id)
     chat_ = await bot.get_entity(chat)
     dn = "approved!"
@@ -269,7 +269,7 @@ async def auth_(event):
     t = await db.get("CHAT_SETTINGS") or "{}"
     t = eval(t)
     await xx.edit(
-        "<b>💝 Join Request Accept 💝 Stats**\n\nUsers: {}\nGroups added (with modified settings): {}</b>".format(
+        "<**💝 Join Request Accept 💝 Stats**\n\n**Users: {}\nGroups added (with modified settings): {}**".format(
             len(await get_all("BOTUSERS")), len(t.keys())
         )
     )
