@@ -131,9 +131,9 @@ async def helper(event):
         '**For add channel, follow this instruction:**\n\n**1. Add bot to your channel and make him administrator permissions**\n\n\n\n**2. Forward any message from channel to bot**\n\n**3. Customize Welcome message and work this bot.',
         
         buttons = [[
-        InlineKeyboardButton('💜 Add Me To Your Channel 💜', url='t.me/Accept_Request_Joinbot?startgroup=true')
+           InlineKeyboardButton('💜 Add Me To Your Channel 💜', url='t.me/Accept_Request_Joinbot?startgroup=true')
     ],[
-        InlineKeyboardButton('Back to Home 🏠', callback_data='start')
+           InlineKeyboardButton('Back to Home 🏠', callback_data='start')
    ]]]
 
 
