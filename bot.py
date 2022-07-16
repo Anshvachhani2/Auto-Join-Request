@@ -113,8 +113,10 @@ async def starters(event):
         buttons=start_buttons,
         link_preview=False,
     )
+    
     if not (await is_added("BOTUSERS", event.sender_id)):
         await add_to_db("BOTUSERS", event.sender_id)
+    if not await db.is_user_exist(message.from_user.id):
         await bot.send_message(log_grp,f"#**NewUser 🔻**\n\n**ID-->{message.from_user.id}**\**NAME-->{message.from_user.mention}**")
 
 
