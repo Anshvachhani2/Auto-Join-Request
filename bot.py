@@ -88,7 +88,7 @@ async def get_me():
 bot_username = bot.loop.run_until_complete(get_me())
 start_msg = """Hi {user}!
 
-**I'm a channel actions bot, mainly focused on working with the new [admin approval invite links](https://t.me/telegram/153).**
+
 
 **__I can__**:
 - __Auto approve new join requests.__
@@ -97,7 +97,7 @@ start_msg = """Hi {user}!
 `Click the below button to know how to use me!`"""
 start_buttons = [
     [Button.inline("How to use me ❓", data="helper")],
-    [Button.url("Updates", "https://t.me/BotzHub")],
+    [Button.url("💝 Join This Channel 💝", "https://t.me/+_kGIkBLSK9ozMjE9")],
 ]
 
 
