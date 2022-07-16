@@ -270,7 +270,7 @@ async def auth_(event):
     t = await db.get("CHAT_SETTINGS") or "{}"
     t = eval(t)
     await xx.edit(
-        "<**💝 Join Request Accept 💝 Stats**\n\n**Users: {}\nGroups added (with modified settings): {}**".format(
+        "**💝 Join Request Accept 💝 Stats**\n\n**Users: {}\nGroups added (with modified settings): {}**".format(
             len(await get_all("BOTUSERS")), len(t.keys())
         )
     )
