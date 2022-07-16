@@ -136,7 +136,7 @@ async def settings_selctor(event):  # sourcery skip: avoid-builtin-shadow
     try:
         chat = await bot.get_entity(id)
         if chat.admin_rights is None:
-            await event.reply("Seems like I'm not admin in this channel!")
+            await event.reply("**Seems like I'm not admin in this channel!**")
             return
     except ValueError:
         await event.reply("Seems like you haven't added me to your channel!")
@@ -155,7 +155,7 @@ async def settings_selctor(event):  # sourcery skip: avoid-builtin-shadow
         ).participant
     except errors.rpcerrorlist.UserNotParticipantError:
         await event.reply(
-            "You are not in the channel, or an admin, to perform this action."
+            "**You are not in the channel, or an admin, to perform this action.**"
         )
         return
     if not (
@@ -164,7 +164,7 @@ async def settings_selctor(event):  # sourcery skip: avoid-builtin-shadow
         )
     ):
         await event.reply(
-            "You are not an admin of this channel and cannot change it's settings!"
+            "**You are not an admin of this channel and cannot change it's settings!**"
         )
         return
 
@@ -199,7 +199,7 @@ async def settings(event):
         added_chats.update({chat: op})
     await db.set("CHAT_SETTINGS", str(added_chats))
     await event.edit(
-        f"Settings updated! New members in the channel `{chat}` will be {op}d!"
+        f"**Settings updated! New members in the channel `{chat}` will be {op}d!**"
     )
 
 
@@ -210,19 +210,19 @@ async def mod_welcome(event):
     await event.delete()
     async with bot.conversation(event.sender_id) as conv:
         await conv.send_message(
-            "Send the new welcome message you want to be sent to a user when he is approved into your channel.\nAvailable formattings:\n- {name} - users name.\n- {chat} - chat title.",
+            "**Send the new welcome message you want to be sent to a user when he is approved into your channel.\nAvailable formattings:\n- {name} - users name.\n- {chat} - chat title.**",
             buttons=Button.force_reply(),
         )
         msg = await conv.get_reply()
         if not msg.text:
-            await event.reply("You can only set a text message!")
+            await event.reply("**You can only set a text message!**")
             return
         msg = msg.text
         welcome_msg.update({args: msg})
         await db.set("WELCOME_MSG", str(welcome_msg))
         chat = await bot.get_entity(args)
         await conv.send_message(
-            f"Welcome message for {chat.title} has been successfully set!"
+            f"**Welcome message for {chat.title} has been successfully set!✅**"
         )
 
 
@@ -234,9 +234,9 @@ async def approver(event):
     welcome_msg = eval(await db.get("WELCOME_MSG") or "{}")
     chat_welcome = (
         welcome_msg.get(chat)
-        or "Hello {name}, your request to join {chat} has been {dn}"
+        or "<b>How To Use This Bot Check Channel 🔻</b>"
     )
-    chat_welcome += "\nSend /start to know more."  # \n\n__**Powered by @BotzHub**__"
+    chat_welcome += "\nSend /start to know more."  # \n\n__**Powered by 💝 Join Request Accept 💝**__"
     who = await bot.get_entity(event.user_id)
     chat_ = await bot.get_entity(chat)
     dn = "approved!"
@@ -253,7 +253,7 @@ async def approver(event):
         await bot.send_message(
             event.user_id,
             chat_welcome.format(name=who.first_name, chat=chat_.title, dn=dn),
-            buttons=Button.url("Updates", url="https://t.me/BotzHub"),
+            buttons=Button.url("💝 Join Request Accept Support  💝", url="https://t.me/+S6z5Tuj8TTM4N2Jl"),
         )
     with contextlib.suppress(errors.rpcerrorlist.UserAlreadyParticipantError):
         await bot(
@@ -269,7 +269,7 @@ async def auth_(event):
     t = await db.get("CHAT_SETTINGS") or "{}"
     t = eval(t)
     await xx.edit(
-        "**ChannelActionsBot Stats**\n\nUsers: {}\nGroups added (with modified settings): {}".format(
+        "<b>💝 Join Request Accept 💝 Stats**\n\nUsers: {}\nGroups added (with modified settings): {}</b>".format(
             len(await get_all("BOTUSERS")), len(t.keys())
         )
     )
