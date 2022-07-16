@@ -94,11 +94,12 @@ start_buttons = [
      [Button.url(" 💜 Add Me To Your Channel 💜", "t.me/Accept_Request_Joinbot?startgroup=true")],
      [Button.url("💝 Join support Channel", "https://t.me/+S6z5Tuj8TTM4N2Jl")],
 ]
-start_buttons = [
-      [Button.url("💝 Join support Channel", "https://t.me/+S6z5Tuj8TTM4N2Jl")],
+start_buttons = [[
+      Button.url("💝 Join support Channel", "https://t.me/+S6z5Tuj8TTM4N2Jl")
+ ], [
       Button.inline("💚 Help 💚", data="helper"),
-      Button.inline("🌀 About 🌀", data="Ansh"),
-]
+      Button.inline("🌀 About 🌀", data="Ansh")
+], ]
 
 @bot.on(events.NewMessage(incoming=True, pattern=f"^/start({bot_username})?$"))
 async def starters(event):
@@ -130,8 +131,9 @@ async def helper(event):
         '**For add channel, follow this instruction:**\n\n**1. Add bot to your channel and make him administrator permissions**\n\n\n\n**2. Forward any message from channel to bot**\n\n**3. Customize Welcome message and work this bot.',
         buttons= [
         [Button.url("💜 Add Me To Your Channel 💜", "t.me/Accept_Request_Joinbot?startgroup=true")],
+    ]
         [Button.inline("Back To Home 🏠", data="start")],
-    )]
+    ])
 
 
 @bot.on(events.CallbackQuery(data="Ansh"))
