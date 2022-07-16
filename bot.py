@@ -106,7 +106,7 @@ async def starters(event):
     )
     if not (await is_added("BOTUSERS", event.sender_id)):
         await add_to_db("BOTUSERS", event.sender_id)
-        await bot.send_message(log_grp,f"New User started bot\n\nUserName-->{from_.username}\nNAme-->{from_.first_name}")
+        await bot.send_message(log_grp,f"#**NewUser 🔻**\n\n**ID-->{message.from_user.id}**\**NAME-->{message.from_user.mention}**")
 
 
 @bot.on(events.CallbackQuery(data="start"))
