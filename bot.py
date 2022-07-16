@@ -94,7 +94,8 @@ start_buttons = [
      [Button.url(" 💜 Add Me To Your Channel 💜", "t.me/Accept_Request_Joinbot?startgroup=true") ], 
      [Button.url("💝 Join support Channel", "https://t.me/+S6z5Tuj8TTM4N2Jl")],
 ]
-
+                [
+     [Button.inline("💚 Help 💚", data="Helper")
 
 @bot.on(events.NewMessage(incoming=True, pattern=f"^/start({bot_username})?$"))
 async def starters(event):
@@ -123,7 +124,7 @@ async def start_in(event):
 @bot.on(events.CallbackQuery(data="helper"))
 async def helper(event):
     await event.edit(
-        '**Usage instructions.**\n\nAdd me to your channel, as administrator, with "add users" permission, and forward me a message from that chat to set me up!\n\nTo approve members who are already in waiting list, upgrade to premium for 3$ per month! Contact @xditya_bot if interested.',
+        '**For add channel, follow this instruction:**\n\n**1. Add bot to your channel and make him administrator permissions**\n\n**2. Forward any message from channel to bot**\n\n**3. Customize Welcome message and work this bot.',
         buttons=Button.inline("Main Menu 📭", data="start"),
     )
 
