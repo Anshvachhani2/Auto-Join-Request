@@ -133,7 +133,7 @@ async def start_in(event):
 @bot.on(events.CallbackQuery(data="helper"))
 async def helper(event):
     await event.edit(
-        '**For add channel, follow this instruction:**\n\n**1. Add bot to your channel and make him administrator permissions**\n\n\n\n**2. Forward any message from channel to bot**\n\n**3. Customize Welcome message and work this bot.',
+        '**For add channel, follow this instruction:**\n\n\n\n**⍟ Add bot to your channel and make him administrator permissions**\n\n**⍟ Forward any message from channel to bot**\n\n**⍟ Customize Welcome message and work this bot.**',
         buttons = [
             [Button.url('💜 Add Me To Your Channel 💜', url='t.me/Accept_Request_Joinbot?startgroup=true')],
             [Button.inline('Back to Home 🏠', data='start')]
