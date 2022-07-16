@@ -131,7 +131,7 @@ async def helper(event):
     )
 
 
-@bot.on(events.callbackQuery(data="Ansh"))
+@bot.on(events.CallbackQuery(data="Ansh"))
 async def Ansh(event):
     await event.edit(
         '💞', 
