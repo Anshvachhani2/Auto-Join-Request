@@ -95,7 +95,9 @@ start_buttons = [
      [Button.url("💝 Join support Channel", "https://t.me/+S6z5Tuj8TTM4N2Jl")],
 ]
                 [
-     [Button.inline("💚 Help 💚", data="Helper")
+     [Button.inline("💚 Help 💚", data="Helper")], 
+     [Button.inline("🌀 About 🌀", data="Ansh")], 
+]
 
 @bot.on(events.NewMessage(incoming=True, pattern=f"^/start({bot_username})?$"))
 async def starters(event):
@@ -124,11 +126,16 @@ async def start_in(event):
 @bot.on(events.CallbackQuery(data="helper"))
 async def helper(event):
     await event.edit(
-        '**For add channel, follow this instruction:**\n\n**1. Add bot to your channel and make him administrator permissions**\n\n**2. Forward any message from channel to bot**\n\n**3. Customize Welcome message and work this bot.',
+        '**For add channel, follow this instruction:**\n\n**1. Add bot to your channel and make him administrator permissions**\n\n\n\n**2. Forward any message from channel to bot**\n\n**3. Customize Welcome message and work this bot.',
         buttons=Button.inline("Main Menu 📭", data="start"),
     )
 
 
+@bot.on(events.callbackQuery(data="Ansh"))
+async def Ansh(event):
+    await event.edit(
+        '💞', 
+        buttons=Button.inline("Back to Home 🏠", data="start"),
 @bot.on(events.NewMessage(incoming=True, func=lambda e: e.is_private and e.fwd_from))
 async def settings_selctor(event):  # sourcery skip: avoid-builtin-shadow
     id = event.fwd_from.from_id
