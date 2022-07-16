@@ -87,7 +87,7 @@ async def get_me():
 bot_username = bot.loop.run_until_complete(get_me())
 start_msg = """**👾 Welcome to the bot**
 
-**Add This Bot To Your Channel To Accept Join Requests Automatically 😊**
+**Add This Bot To Your Channel To Accept Join Requests Automatically 😊**"""
 
 
 start_buttons = [
