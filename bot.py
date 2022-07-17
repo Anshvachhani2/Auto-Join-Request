@@ -118,7 +118,7 @@ async def starters(event):
     if not (await is_added("BOTUSERS", event.sender_id)):
         await add_to_db("BOTUSERS", event.sender_id)
         mention = f'[{from_.first_name}](t.me/{from_.username})' if from_.username else from_.first_name
-        await bot.send_message(log_grp,f"#NewUser 🔻\n\nID-->{from_.id}\nName-->{mention}")
+        await bot.send_message(log_grp,f"**#NewUser 🔻**\n\n**ID-->** `{from_.id}`\n**Name-->{mention}**")
 
 
 @bot.on(events.CallbackQuery(data="start"))
