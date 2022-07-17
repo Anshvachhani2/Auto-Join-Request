@@ -109,14 +109,17 @@ start_buttons = [[
 async def starters(event):
     from_ = await bot.get_entity(event.sender_id)
     await event.reply(
-        start_msg.format(user=from_.first_name),
+        start_msg.format(
+            "user"=from_.first_name, 
+            "user_id"= event.from_.id, 
+            "id"= event.from_.id),
         buttons=start_buttons,
         link_preview=False,
     )
     
     if not (await is_added("BOTUSERS", event.sender_id)):
         await add_to_db("BOTUSERS", event.sender_id)
-        await bot.send_message(log_grp,f"#**NewUser 🔻**\n\n**ID-->{message.from_.first_name}**\**Name-->{message.from_user.mention}**"), 
+        await bot.send_message(log_grp,f"#**NewUser 🔻**\n\n**ID-->{from_.first_name}**\**Name-->{from_.id}**"), 
 
 
 @bot.on(events.CallbackQuery(data="start"))
