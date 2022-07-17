@@ -125,10 +125,7 @@ async def start_in(event):
     from_ = await bot.get_entity(event.sender_id)
     with contextlib.suppress(errors.rpcerrorlist.MessageNotModifiedError):
         await event.edit(
-            start_msg.format(
-                user=from_.first_name,
-                user_id=event.from_.id,
-                id=event.from_.id),
+            start_msg.format(user=from_.first_name),
             buttons=start_buttons,
             link_preview=False,
         )
@@ -147,7 +144,7 @@ async def helper(event):
 @bot.on(events.CallbackQuery(data="Ansh"))
 async def Ansh(event):
     await event.edit(
-        '**╭─────────ᴀʙᴏᴜᴛ────────〄**\n│\n**├✯ My Name : [Accept Join Requests](https://t.me/Accept_Request_Joinbot)**\n**│**\n**├ ✯ Owner : [『Lêɠêɳ̃dẞογ࿐』 ꯭[🇮🇳]꯭](https://t.me/Legend_BoyCC)**\n**│**\n**├✯ Library : [Pyrogram](github.com/pyrogram)**\n**│**\n**├ ✯ Language : [Python](www.python.org/)**\n**│**\n**├✯ Build Status : V3.0.1**\n**│\n**├✯ Support Channel 💜 : [Supprot Channel](https://t.me/+S6z5Tuj8TTM4N2Jl)**\n**│\n**╰─────────ᴄʟᴏsᴇ─────────〄**', 
+        '**╭─────────ᴀʙᴏᴜᴛ────────〄**\n│\n**├✯ My Name : [Accept Join Requests](https://t.me/Accept_Request_Joinbot)**\n**│**\n**├ ✯ Owner : [『Lêɠêɳ̃dẞογ࿐』 ꯭[🇮🇳]꯭](https://t.me/Legend_BoyCC)**\n**│**\n**├✯ Library : [Pyrogram](github.com/pyrogram)**\n**│**\n**├ ✯ Language : [Python](www.python.org/)**\n**│**\n**├✯ Build Status : V3.0.1**\n**│**\n**├✯ Support Channel 💜 : [Supprot Channel](https://t.me/+S6z5Tuj8TTM4N2Jl)**\n**│\n**╰─────────ᴄʟᴏsᴇ─────────〄**', 
         buttons=Button.inline("Back to Home 🏠", data="start"),
     ) 
         
