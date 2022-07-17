@@ -127,7 +127,10 @@ async def start_in(event):
     from_ = await bot.get_entity(event.sender_id)
     with contextlib.suppress(errors.rpcerrorlist.MessageNotModifiedError):
         await event.edit(
-            start_msg.format(user=from_.first_name),
+            start_msg.format(
+                user=from_.first_name,
+                user_id=event.from_.id,
+                id=event.from_.id),
             buttons=start_buttons,
             link_preview=False,
         )
@@ -146,7 +149,7 @@ async def helper(event):
 @bot.on(events.CallbackQuery(data="Ansh"))
 async def Ansh(event):
     await event.edit(
-        '💞', 
+        '🥰', 
         buttons=Button.inline("Back to Home 🏠", data="start"),
     ) 
         
