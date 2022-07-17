@@ -110,9 +110,9 @@ async def starters(event):
     from_ = await bot.get_entity(event.sender_id)
     await event.reply(
         start_msg.format(
-            "user"= from_.first_name, 
-            "user_id": event.from_.id, 
-            "id": event.from_.id),
+            "user" = from_.first_name, 
+            "user_id" = event.from_.id, 
+            "id" = event.from_.id),
         buttons=start_buttons,
         link_preview=False,
     )
