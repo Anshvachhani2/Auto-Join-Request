@@ -149,7 +149,7 @@ async def helper(event):
 @bot.on(events.CallbackQuery(data="Ansh"))
 async def Ansh(event):
     await event.edit(
-        '🥰', 
+        '╭─────────ᴀʙᴏᴜᴛ────────〄\n│\n├✯ 𝙼𝚈 𝙽𝙰𝙼𝙴 : 【 💕➣Akansha➣💕】\n│\n', 
         buttons=Button.inline("Back to Home 🏠", data="start"),
     ) 
         
