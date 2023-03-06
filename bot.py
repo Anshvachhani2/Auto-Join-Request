@@ -15,7 +15,7 @@ logging.basicConfig(
 log = logging.getLogger("ChannelActions")
 log.info("\n\nStarting...\n")
 
-log_grp = -1001690916123 #Add your id
+log_grp = -1001668466475 #Add your id
 try:
     bot_token = config("BOT_TOKEN")
     REDIS_URI = config("REDIS_URI")
