@@ -96,10 +96,10 @@ start_msg = """**👾 Welcome to the bot**
 
 start_buttons = [
      [Button.url(" 💜 Add Me To Your Channel 💜", "t.me/Accept_Request_Joinbot?startgroup=true")],
-     [Button.url("💝 Join support Channel", "https://t.me/+S6z5Tuj8TTM4N2Jl")],
+     [Button.url("💝 Join support Channel", "https://t.me/+a4Zmczqey1RkYmU1")],
 ]
 start_buttons = [[
-      Button.url("💝 Join support Channel", "https://t.me/+S6z5Tuj8TTM4N2Jl")
+      Button.url("💝 Join support Channel", "https://t.me/+a4Zmczqey1RkYmU1")
  ], [
       Button.inline("💚 Help 💚", data="helper"),
       Button.inline("🌀 About 🌀", data="Ansh")
@@ -145,7 +145,7 @@ async def helper(event):
 @bot.on(events.CallbackQuery(data="Ansh"))
 async def Ansh(event):
     await event.edit(
-        '**╭─────────ᴀʙᴏᴜᴛ────────〄**\n**│**\n**├✯ My Name : [Accept Join Requests](https://t.me/Accept_Request_Joinbot)**\n**│**\n**├ ✯ Owner : [『Lêɠêɳ̃dẞογ࿐』 ꯭[🇮🇳]꯭](https://t.me/Legend_BoyCC)**\n**│**\n**├✯ Library : [Pyrogram](github.com/pyrogram)**\n**│**\n**├ ✯ Language : [Python](www.python.org/)**\n**│**\n**├✯ Build Status : V3.0.1**\n**│**\n**├✯ Support Channel 💜 : [Support Channel ](https://t.me/+S6z5Tuj8TTM4N2Jl)**\n**│**\n**╰─────────ᴄʟᴏsᴇ─────────〄**', 
+        '**╭─────────ᴀʙᴏᴜᴛ────────〄**\n**│**\n**├✯ My Name : [Accept Join Requests](https://t.me/Accept_Request_Joinbot)**\n**│**\n**├ ✯ Owner : [『Lêɠêɳ̃dẞογ࿐』 ꯭[🇮🇳]꯭](https://t.me/Legend_BoyCC)**\n**│**\n**├✯ Library : [Pyrogram](github.com/pyrogram)**\n**│**\n**├ ✯ Language : [Python](www.python.org/)**\n**│**\n**├✯ Build Status : V3.0.1**\n**│**\n**├✯ Support Channel 💜 : [Support Channel ](https://t.me/+a4Zmczqey1RkYmU1)**\n**│**\n**╰─────────ᴄʟᴏsᴇ─────────〄**', 
         buttons=Button.inline("Back to Home 🏠", data="start"),
     ) 
         
@@ -257,7 +257,7 @@ async def approver(event):
     welcome_msg = eval(await db.get("WELCOME_MSG") or "{}")
     chat_welcome = (
         welcome_msg.get(chat)
-        or "**🌀 Power By --> @All_Hindi_TV_Serials_2**"
+        or "**🌀 Power By --> @Request_Movies_V2**"
     )
     chat_welcome += "\n**How To Use This Bot Check Channel🔻**"  # \n\n__**Powered by 💝 Join Request Accept 💝**__"
     who = await bot.get_entity(event.user_id)
@@ -276,7 +276,7 @@ async def approver(event):
         await bot.send_message(
             event.user_id,
             chat_welcome.format(name=who.first_name, chat=chat_.title, dn=dn),
-            buttons=Button.url("💝 Join Request Accept Support  💝", url="https://t.me/+S6z5Tuj8TTM4N2Jl"),
+            buttons=Button.url("💝 Join Request Accept Support  💝", url="https://t.me/+a4Zmczqey1RkYmU1"),
         )
     with contextlib.suppress(errors.rpcerrorlist.UserAlreadyParticipantError):
         await bot(
